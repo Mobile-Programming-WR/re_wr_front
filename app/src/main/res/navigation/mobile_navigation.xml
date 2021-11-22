@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_running">
+
+    <fragment
+        android:id="@+id/nav_running"
+        android:name="com.example.wr.ui.running.RunningFragment"
+        android:label="@string/menu_running"
+        tools:layout="@layout/fragment_running" />
+
+    <fragment
+        android:id="@+id/nav_record"
+        android:name="com.example.wr.ui.record.RecordFragment"
+        android:label="@string/menu_record"
+        tools:layout="@layout/fragment_record" />
+
+    <fragment
+        android:id="@+id/nav_friend"
+        android:name="com.example.wr.ui.friend.FriendFragment"
+        android:label="@string/menu_friend"
+        tools:layout="@layout/fragment_friend" />
+    <fragment
+        android:id="@+id/nav_competition"
+        android:name="com.example.wr.ui.competition.CompetitionFragment"
+        android:label="@string/menu_competition"
+        tools:layout="@layout/fragment_competition" />
+    <fragment
+        android:id="@+id/nav_challenge"
+        android:name="com.example.wr.ui.challenge.ChallengeFragment"
+        android:label="@string/menu_challenge"
+        tools:layout="@layout/fragment_challenge" />
+    <fragment
+        android:id="@+id/nav_setting"
+        android:name="com.example.wr.ui.setting.SettingFragment"
+        android:label="@string/menu_setting"
+        tools:layout="@layout/fragment_setting" />
+</navigation>

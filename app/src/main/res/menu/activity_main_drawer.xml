@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_running"
+            android:icon="@drawable/menu_running"
+            android:title="@string/menu_running" />
+        <item
+            android:id="@+id/nav_record"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_record" />
+        <item
+            android:id="@+id/nav_friend"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_friend" />
+        <item
+            android:id="@+id/nav_competition"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_competition" />
+        <item
+            android:id="@+id/nav_challenge"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_challenge" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_setting" />
+    </group>
+</menu>
