@@ -5,5 +5,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.friend.FriendFragment">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/tvFriendAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/emblema_one"
+            android:text="친구신청"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <EditText
+                android:id="@+id/etFriendId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="아이디"
+                android:minHeight="48dp"
+                android:textColor="#000000"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnAddSend"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_marginBottom="11dp"
+                android:background="@drawable/btn_radius_small"
+                android:text="보내기"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/etFriendId"
+                app:layout_constraintEnd_toEndOf="@+id/etFriendId"
+                app:layout_constraintTop_toTopOf="@+id/etFriendId"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvFriendRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/emblema_one"
+            android:text="친구요청"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+        <ListView
+            android:id="@+id/lvRequestList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="10sp"
+            android:divider="@android:color/transparent">
+
+        </ListView>
+        <TextView
+            android:id="@+id/tvFriendList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/emblema_one"
+            android:text="친구목록"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <ListView
+            android:id="@+id/lvFriendsList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="10sp"
+            android:divider="@android:color/transparent">
+
+        </ListView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
