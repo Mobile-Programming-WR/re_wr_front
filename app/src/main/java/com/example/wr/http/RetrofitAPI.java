@@ -9,6 +9,8 @@ import retrofit2.http.Header;
 import retrofit2.http.HeaderMap;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface RetrofitAPI {
     @POST("user/login")
@@ -16,4 +18,11 @@ public interface RetrofitAPI {
 
     @GET("friend/list")
     Call<FriendsList> getFriendsList(@Header("Authorization") String authorization);
+    @GET("friend/requestlist")
+    Call<FriendsList> getRequestList(@Header("Authorization") String authorization);
+    @GET("friend/accept/{id}")
+    Call<Success> getAccept(@Header("Authorization") String authorization, @Path("id") String name);
+
+    @POST("friend/add/{id}")
+    Call<Success> postAddFriend(@Header("Authorization") String authorization, @Path("id") String name);
 }

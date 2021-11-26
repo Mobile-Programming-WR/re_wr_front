@@ -19,16 +19,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <TextView
-            android:id="@+id/tvFriendTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:fontFamily="@font/emblema_one"
-            android:text="친구"
-            android:textColor="@color/black"
-            android:textSize="30sp" />
-        <TextView
-            android:id="@+id/tvFriendRequestTitle"
+            android:id="@+id/tvFriendAdd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -53,7 +44,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/btnRegisterSend"
+                android:id="@+id/btnAddSend"
                 android:layout_width="wrap_content"
                 android:layout_height="0dp"
                 android:layout_marginTop="4dp"
@@ -69,10 +60,42 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tvFriendRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/emblema_one"
+            android:text="친구요청"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+        <ListView
+            android:id="@+id/lvRequestList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="10sp"
+            android:divider="@android:color/transparent">
+
+        </ListView>
+        <TextView
+            android:id="@+id/tvFriendList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/emblema_one"
+            android:text="친구목록"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
         <ListView
             android:id="@+id/lvFriendsList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:dividerHeight="10sp"
+            android:divider="@android:color/transparent">
 
         </ListView>
     </LinearLayout>
