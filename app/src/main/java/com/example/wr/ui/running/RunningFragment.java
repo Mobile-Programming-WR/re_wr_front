@@ -32,6 +32,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.wr.R;
 import com.example.wr.databinding.FragmentRunningBinding;
+import com.example.wr.http.RunInfo;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -44,6 +45,9 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
+
+import java.util.ArrayList;
+import java.util.List;
 /*
 
 import com.pedro.library.AutoPermissionsListener;
@@ -72,6 +76,7 @@ public class RunningFragment extends Fragment
     private MarkerOptions markerOptions;
     private PolylineOptions polylineOptions = new PolylineOptions().width(50f).color(Color.RED);
     private LatLng fromLatLng, toLatLng;
+    private List<LatLng> arrayPoints = new ArrayList<>();
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -160,6 +165,15 @@ public class RunningFragment extends Fragment
         btnRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                String strTime = String.valueOf(SystemClock.elapsedRealtime() - pauseOffset);
+                String strDistance = String.valueOf(textDist);
+                String strSteps = String.valueOf(currentSteps);
+                String strPace = String.valueOf(paceMin)+"\'"+String.valueOf(paceSec)+"\'\'";
+                String strCadence = String.valueOf((int)cadence);
+
+                RunInfo runInfo = new RunInfo(strTime, strDistance, strSteps, strPace, strCadence, arrayPoints);
+
                 btnRunning.setBackgroundResource(R.drawable.btn_play);
                 btnRestart.setVisibility(View.GONE);
                 pauseOffset = 0;
@@ -206,6 +220,7 @@ public class RunningFragment extends Fragment
                 if(fromLatLng == null) {
                     fromLatLng = toLatLng;
                     polylineOptions.add(fromLatLng);
+                    arrayPoints.add(fromLatLng);
                 }
 
 /*
@@ -237,6 +252,7 @@ public class RunningFragment extends Fragment
                 Log.d("MapsActivity", "위도: " + location.getLatitude() + ", 경도: " + location.getLongitude());
 
                 polylineOptions.add(toLatLng);
+                arrayPoints.add(toLatLng);
 
 /*
                 mMap.addPolyline(polylineOptions);
