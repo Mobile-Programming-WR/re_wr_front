@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/drawable-v24/btn_radius_big.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/drawable-v24/btn_radius_small.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/drawable/border.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/btn_border_radius.xml" value="0.30092592592592593" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_menu_running.xml" value="0.3260416666666667" />
@@ -18,7 +19,7 @@
         <entry key="app/src/main/res/layout/content_main.xml" value="0.12386018237082067" />
         <entry key="app/src/main/res/layout/fragment_challenge.xml" value="0.13405797101449277" />
         <entry key="app/src/main/res/layout/fragment_competition.xml" value="0.13405797101449277" />
-        <entry key="app/src/main/res/layout/fragment_friend.xml" value="0.13405797101449277" />
+        <entry key="app/src/main/res/layout/fragment_friend.xml" value="0.3946078431372549" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13405797101449277" />
         <entry key="app/src/main/res/layout/fragment_record.xml" value="0.13405797101449277" />
@@ -27,6 +28,7 @@
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/layout_login.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/layout_register.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/listview_custom.xml" value="0.20878623188405798" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/second.xml" value="0.2427536231884058" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2546875" />
