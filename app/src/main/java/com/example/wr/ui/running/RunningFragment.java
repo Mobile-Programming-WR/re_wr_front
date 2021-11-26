@@ -3,6 +3,7 @@ package com.example.wr.ui.running;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.Sensor;
@@ -32,7 +33,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.wr.R;
 import com.example.wr.databinding.FragmentRunningBinding;
+import com.example.wr.http.RetrofitClient;
 import com.example.wr.http.RunInfo;
+import com.example.wr.http.Success;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -48,6 +51,10 @@ import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 /*
 
 import com.pedro.library.AutoPermissionsListener;
@@ -173,6 +180,31 @@ public class RunningFragment extends Fragment
                 String strCadence = String.valueOf((int)cadence);
 
                 RunInfo runInfo = new RunInfo(strTime, strDistance, strSteps, strPace, strCadence, arrayPoints);
+
+                SharedPreferences preferences = getContext().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+                String token = "bearer "+preferences.getString("token","");
+
+                Call<Success> call = RetrofitClient.getApiService().postAddRecord(token, runInfo);
+                call.enqueue(new Callback<Success>() {
+                    @Override
+                    public void onResponse(Call<Success> call, Response<Success> response) {
+                        if(!response.isSuccessful()){
+                            Log.e("연결이 비정상적 : ", "error code : " + response.code());
+                            Toast.makeText(getContext(), "서버 오류입니다", Toast.LENGTH_LONG);
+                            return;
+                        }
+                        Toast.makeText(getContext(), "달리기 수고했어요", Toast.LENGTH_LONG);
+
+//                Log.d("success :", fl.toString());
+                    }
+                    @Override
+                    public void onFailure(Call<Success> call, Throwable t) {
+//                token = "connection failed";
+                        Log.e("연결실패", t.getMessage());
+                        Toast.makeText(getContext(), "오류", Toast.LENGTH_LONG);
+
+                    }
+                });
 
                 btnRunning.setBackgroundResource(R.drawable.btn_play);
                 btnRestart.setVisibility(View.GONE);

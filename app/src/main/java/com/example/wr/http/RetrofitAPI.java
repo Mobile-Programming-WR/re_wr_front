@@ -25,4 +25,7 @@ public interface RetrofitAPI {
 
     @POST("friend/add/{id}")
     Call<Success> postAddFriend(@Header("Authorization") String authorization, @Path("id") String name);
+
+    @POST("record")
+    Call<Success> postAddRecord(@Header("Authorization") String authorization, @Body RunInfo runInfo);
 }
