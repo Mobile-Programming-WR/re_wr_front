@@ -1,6 +1,7 @@
 package com.example.wr.http;
 
 import com.example.wr.DTO.Challenge;
+import com.example.wr.DTO.Friend;
 import com.example.wr.DTO.FriendsList;
 import com.example.wr.DTO.RegisterRequest;
 
@@ -34,6 +35,8 @@ public interface RetrofitAPI {
     Call<Success> getAddCompetition(@Header("Authorization") String authorization, @Path("id") String id);
     @GET("friend/competition/accept/{id}")
     Call<Success> getAcceptCompetition(@Header("Authorization") String authorization, @Path("id") String id);
+    @GET("friend/competition/{id}")
+    Call<FriendsList> getCompetitionList(@Header("Authorization") String authorization);
     @DELETE("friend/{id}")
     Call<Success> deleteFriend(@Header("Authorization") String authorization, @Path("id") String id);
     // record
