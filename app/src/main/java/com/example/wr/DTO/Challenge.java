@@ -1,4 +1,4 @@
-package com.example.wr.http;
+package com.example.wr.DTO;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ public class Challenge {
         return success;
     }
 
-    public List<Ranker> getrecordsList() {
+    public List<Ranker> getRecordsList() {
         return recordsList;
     }
 }
