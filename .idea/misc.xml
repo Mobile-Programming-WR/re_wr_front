@@ -51,6 +51,8 @@
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/layout_login.xml" value="0.19739583333333333" />
         <entry key="app/src/main/res/layout/layout_register.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/listview_friend.xml" value="0.15070921985815602" />
+        <entry key="app/src/main/res/layout/listview_request.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/second.xml" value="0.2427536231884058" />
         <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.2546875" />

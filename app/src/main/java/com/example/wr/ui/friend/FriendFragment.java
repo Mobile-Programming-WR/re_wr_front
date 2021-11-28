@@ -14,13 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.wr.databinding.FragmentFriendBinding;
-import com.example.wr.databinding.FragmentSettingBinding;
-import com.example.wr.http.Friend;
-import com.example.wr.http.FriendsList;
-import com.example.wr.http.LoginResponse;
+import com.example.wr.DTO.FriendsList;
 import com.example.wr.http.RetrofitClient;
 import com.example.wr.http.Success;
-import com.example.wr.ui.setting.SettingViewModel;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -41,7 +37,7 @@ public class FriendFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String name = binding.etFriendId.getText().toString();
-                Call<Success> call = RetrofitClient.getApiService().postAddFriend(token, name);
+                Call<Success> call = RetrofitClient.getApiService().getAddFriend(token, name);
                 call.enqueue(new Callback<Success>() {
                     @Override
                     public void onResponse(Call<Success> call, Response<Success> response) {
@@ -69,19 +65,50 @@ public class FriendFragment extends Fragment {
     }
     public void refreshFragment(String token){
         Log.d("Refresh", "");
-        Call<FriendsList> call = RetrofitClient.getApiService().getFriendsList(token);
-        call.enqueue(new Callback<FriendsList>() {
+        Call<FriendsList> callRequestList = RetrofitClient.getApiService().getRequestList(token);
+        // 친구 신청 목록 가져오
+        callRequestList.enqueue(new Callback<FriendsList>() {
             @Override
             public void onResponse(Call<FriendsList> call, Response<FriendsList> response) {
                 if(!response.isSuccessful()){
                     Log.e("연결이 비정상적 : ", "error code : " + response.code());
                     return;
                 }
-                ListView listView = binding.lvFriendsList;
+                ListView listView = binding.lvRequestList;
                 FriendsList fl = response.body();
-                final FriendsListAdapter friendsListAdapter = new FriendsListAdapter(getContext(), fl.getList(), fragment);
-                listView.setAdapter(friendsListAdapter);
-                ViewGroup viewGroup = (ViewGroup) binding.tvFriendRequest.getParent();
+                final RequestListAdapter requestListAdapter = new RequestListAdapter(getContext(), fl.getList(), fragment);
+                listView.setAdapter(requestListAdapter);
+                // 신청 목록이 비어있으면 친구목록창 삭제
+                if(requestListAdapter.getCount()==0){
+                    binding.tvFriendRequest.setVisibility(View.GONE);
+                } else {
+                    binding.tvFriendRequest.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onFailure(Call<FriendsList> call, Throwable t) {
+//                token = "connection failed";
+                Log.e("연결실패", t.getMessage());
+            }
+        });
+        Call<FriendsList> callCompetitionRequest = RetrofitClient.getApiService().getCompetitionRequest(token);
+        callCompetitionRequest.enqueue(new Callback<FriendsList>() {
+            @Override
+            public void onResponse(Call<FriendsList> call, Response<FriendsList> response) {
+                if(!response.isSuccessful()){
+                    Log.e("연결이 비정상적 : ", "error code : " + response.code());
+                    return;
+                }
+                FriendsList fl = response.body();
+                ListView listView = binding.lvCompetitionRequestList;
+                final CompetitionRequestListAdapter competitionRequestListAdapter = new CompetitionRequestListAdapter(getContext(), fl.getList(), fragment);
+                // 신청 목록이 비어있으면 친구목록창 삭제
+                if(competitionRequestListAdapter.getCount()==0){
+                    binding.tvCompetitionRequest.setVisibility(View.GONE);
+                } else {
+                    binding.tvCompetitionRequest.setVisibility(View.VISIBLE);
+                }
+                listView.setAdapter(competitionRequestListAdapter);
 //                Log.d("success :", fl.toString());
             }
             @Override
@@ -90,8 +117,8 @@ public class FriendFragment extends Fragment {
                 Log.e("연결실패", t.getMessage());
             }
         });
-        Call<FriendsList> call2 = RetrofitClient.getApiService().getRequestList(token);
-        call2.enqueue(new Callback<FriendsList>() {
+        Call<FriendsList> callFriend = RetrofitClient.getApiService().getFriendsList(token);
+        callFriend.enqueue(new Callback<FriendsList>() {
             @Override
             public void onResponse(Call<FriendsList> call, Response<FriendsList> response) {
                 if(!response.isSuccessful()){
@@ -99,19 +126,14 @@ public class FriendFragment extends Fragment {
                     return;
                 }
                 FriendsList fl = response.body();
-                ListView listView = binding.lvRequestList;
-                final RequestListAdapter requestListAdapter = new RequestListAdapter(getContext(), fragment, fl.getList());
-                if(requestListAdapter.getCount()==0){
-                    ViewGroup viewGroup = (ViewGroup) binding.tvFriendRequest.getParent();
-                    viewGroup.removeView(binding.tvFriendRequest);
-                }
-                listView.setAdapter(requestListAdapter);
-//                Log.d("success :", fl.toString());
+                ListView listView = binding.lvFriendsList;
+                final FriendsListAdapter friendsListAdapter = new FriendsListAdapter(getContext(), fl.getList(), fragment);
+                listView.setAdapter(friendsListAdapter);
             }
+
             @Override
             public void onFailure(Call<FriendsList> call, Throwable t) {
-//                token = "connection failed";
-                Log.e("연결실패", t.getMessage());
+
             }
         });
     }

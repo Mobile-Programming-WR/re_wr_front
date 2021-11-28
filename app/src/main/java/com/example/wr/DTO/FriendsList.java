@@ -1,4 +1,4 @@
-package com.example.wr.http;
+package com.example.wr.DTO;
 
 import java.util.List;
 

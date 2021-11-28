@@ -1,4 +1,4 @@
-package com.example.wr.http;
+package com.example.wr.DTO;
 
 public class Friend {
     private String id;

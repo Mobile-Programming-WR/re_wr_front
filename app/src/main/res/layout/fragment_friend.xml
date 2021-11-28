@@ -60,7 +60,6 @@
                 tools:ignore="TouchTargetSizeCheck" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
         <TextView
             android:id="@+id/tvFriendRequest"
             android:layout_width="match_parent"
@@ -73,6 +72,24 @@
             android:textSize="24sp" />
         <ListView
             android:id="@+id/lvRequestList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:dividerHeight="10sp"
+            android:divider="@android:color/transparent">
+
+        </ListView>
+        <TextView
+            android:id="@+id/tvCompetitionRequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/emblema_one"
+            android:text="겨루기요청"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+        <ListView
+            android:id="@+id/lvCompetitionRequestList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:dividerHeight="10sp"
