@@ -11,8 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.wr.R;
 import com.example.wr.DTO.Friend;
+import com.example.wr.R;
 import com.example.wr.http.RetrofitClient;
 import com.example.wr.http.Success;
 
@@ -22,12 +22,12 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class RequestListAdapter extends BaseAdapter {
+public class CompetitionRequestListAdapter extends BaseAdapter {
     Context mContext = null;
     LayoutInflater mLayoutInflater = null;
     List<Friend> friendsList;
     FriendFragment fragment;
-    public RequestListAdapter(Context context, List<Friend> data, FriendFragment fragment) {
+    public CompetitionRequestListAdapter(Context context, List<Friend> data, FriendFragment fragment) {
         mContext = context;
         friendsList = data;
         mLayoutInflater = LayoutInflater.from(mContext);
@@ -56,12 +56,13 @@ public class RequestListAdapter extends BaseAdapter {
         TextView tvFriendName = (TextView)view.findViewById(R.id.tvFriendName);
         Button btnAddAccept = (Button)view.findViewById(R.id.btnAccept);
         tvFriendName.setText(friendsList.get(position).getName());
+        SharedPreferences preferences = mContext.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        String token = "bearer "+preferences.getString("token","");
         btnAddAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences preferences = mContext.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
-                String token = "bearer "+preferences.getString("token","");
-                Call<Success> call = RetrofitClient.getApiService().getAccept(token, friendsList.get(position).getId());
+
+                Call<Success> call = RetrofitClient.getApiService().getAcceptCompetition(token, friendsList.get(position).getId());
                 call.enqueue(new Callback<Success>() {
                     @Override
                     public void onResponse(Call<Success> call, Response<Success> response) {
@@ -69,7 +70,7 @@ public class RequestListAdapter extends BaseAdapter {
                             Log.e("연결이 비정상적 : ", "error code : " + response.code());
                             return;
                         }
-                        Toast.makeText(mContext, "친구 추가", Toast.LENGTH_LONG).show();
+                        Toast.makeText(mContext, "겨루기 추가", Toast.LENGTH_LONG).show();
                         fragment.refreshFragment(token);
                     }
                     @Override
