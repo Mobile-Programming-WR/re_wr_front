@@ -47,7 +47,7 @@ public class ChallengeFragment extends Fragment {
                 TextView tvRank = binding.tvChallengeRank;
                 ListView listView = binding.lvChallengeRankList;
                 Challenge challenge = response.body();
-                tvRank.setText("상위 " + challenge.getRank()*100 + "%");
+                tvRank.setText("상위 " + String.format("%.1f", challenge.getRank()*100) + "%");
                 final ChallengeListAdapter challengeListAdapter = new ChallengeListAdapter(getContext(), challenge.getRecordsList());
                 listView.setAdapter(challengeListAdapter);
 
