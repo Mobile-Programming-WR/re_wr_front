@@ -1,4 +1,6 @@
-package com.example.wr.http;
+package com.example.wr.DTO;
+
+import com.example.wr.http.RunInfo;
 
 import java.util.List;
 

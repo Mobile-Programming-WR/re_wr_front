@@ -11,13 +11,12 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.wr.databinding.FragmentRecordBinding;
-import com.example.wr.http.RecordsList;
+import com.example.wr.DTO.RecordsList;
 import com.example.wr.http.RetrofitClient;
 
 import retrofit2.Call;
@@ -60,6 +59,7 @@ public class RecordFragment extends Fragment {
             }
         });
 
+        binding.elvRecordList.setGroupIndicator(null);
         binding.elvRecordList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @SuppressLint("ResourceType")
             @Override
