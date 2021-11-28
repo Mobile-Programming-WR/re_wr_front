@@ -7,6 +7,7 @@
     tools:context=".ui.record.RecordFragment">
 
     <LinearLayout
+        android:id="@+id/fragment_record"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
@@ -26,14 +27,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ListView
-                android:id="@+id/lvRecordList"
+            <ExpandableListView
+                android:id="@+id/elvRecordList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:dividerHeight="10sp"
                 android:divider="@android:color/transparent">
 
-            </ListView>
+            </ExpandableListView>
         </LinearLayout>
 
 

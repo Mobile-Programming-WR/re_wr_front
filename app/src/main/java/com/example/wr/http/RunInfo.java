@@ -35,4 +35,20 @@ public class RunInfo {
     public Date getDate() {
         return date;
     }
+
+    public int getCadence() {
+        return cadence;
+    }
+
+    public int getPace() {
+        return pace;
+    }
+
+    public List<LatLng> getCoordinates() {
+        return coordinates;
+    }
+
+    public int getSteps() {
+        return steps;
+    }
 }
