@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1828125" />
+        <entry key="../../Library/Android/sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.1" />
         <entry key="..\:/Users/KYB/re_wr_front/app/src/main/res/drawable-v24/btn_play_xml.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/KYB/re_wr_front/app/src/main/res/drawable-v24/btn_radius_big.xml" value="0.26979166666666665" />
         <entry key="..\:/Users/KYB/re_wr_front/app/src/main/res/drawable-v24/btn_radius_small.xml" value="0.26979166666666665" />
@@ -34,17 +35,19 @@
         <entry key="app/src/main/res/drawable-v24/btn_radius_big.xml" value="0.18072916666666666" />
         <entry key="app/src/main/res/drawable-v24/btn_radius_small.xml" value="0.21354166666666666" />
         <entry key="app/src/main/res/drawable/border.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/custom_spinner_item.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_menu_gallery.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_menu_running.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/ic_menu_slideshow.xml" value="0.3260416666666667" />
         <entry key="app/src/main/res/drawable/side_nav_bar.xml" value="0.3260416666666667" />
+        <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/font/font.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2666543638405638" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.12386018237082067" />
         <entry key="app/src/main/res/layout/fragment_challenge.xml" value="0.4375" />
-        <entry key="app/src/main/res/layout/fragment_competition.xml" value="0.13405797101449277" />
+        <entry key="app/src/main/res/layout/fragment_competition.xml" value="0.3725247524752475" />
         <entry key="app/src/main/res/layout/fragment_friend.xml" value="0.13405797101449277" />
         <entry key="app/src/main/res/layout/fragment_gallery.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13405797101449277" />
