@@ -2,6 +2,7 @@ package com.example.wr.http;
 
 import com.example.wr.DTO.Challenge;
 import com.example.wr.DTO.FriendsList;
+import com.example.wr.DTO.RegisterRequest;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -13,7 +14,10 @@ import retrofit2.http.Path;
 
 public interface RetrofitAPI {
     @POST("user/login")
-    Call<LoginResponse> postOverlapCheck(@Body LoginRequest loginRequest); //이건 바디 요청시 사용하는거
+    Call<LoginResponse> postLogin(@Body LoginRequest loginRequest); //이건 바디 요청시 사용하는거
+
+    @POST("user")
+    Call<Success> postRegister(@Body RegisterRequest registerRequest);
 
     // friend
     @GET("friend/list")

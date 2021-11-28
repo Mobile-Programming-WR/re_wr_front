@@ -8,29 +8,19 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.wr.MainActivity;
-import com.example.wr.R;
-import com.example.wr.databinding.ActivityMainBinding;
 import com.example.wr.databinding.LayoutLoginBinding;
-import com.example.wr.http.CallRetrofit;
 import com.example.wr.http.LoginRequest;
 import com.example.wr.http.LoginResponse;
 import com.example.wr.http.RetrofitClient;
-
-import java.io.IOException;
-import java.util.List;
+import com.example.wr.ui.register.RegisterActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LoginActivity extends AppCompatActivity {
     private LayoutLoginBinding binding;
@@ -42,8 +32,17 @@ public class LoginActivity extends AppCompatActivity {
         binding = LayoutLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         Button loginBtn = binding.btnLogin;
+        Button RegisterBtn = binding.btnGoRegister;
         EditText loginId = binding.etLoginId;
         EditText loginPw = binding.etLoginPw;
+        RegisterBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =  new Intent(getApplicationContext(), RegisterActivity.class);
+                startActivity(intent);
+                return;
+            }
+        });
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 LoginRequest loginRequest = new LoginRequest(id, password);
                 LoginResponse loginResponse = new LoginResponse();
-                Call<LoginResponse> call = RetrofitClient.getApiService().postOverlapCheck(loginRequest);
+                Call<LoginResponse> call = RetrofitClient.getApiService().postLogin(loginRequest);
                 call.enqueue(new Callback<LoginResponse>() {
                     @Override
                     public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
@@ -76,6 +75,9 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("token",token);
                         //항상 commit & apply 를 해주어야 저장이 된다.
                         editor.commit();
+                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(intent);
+                        return;
                     }
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
@@ -87,9 +89,7 @@ public class LoginActivity extends AppCompatActivity {
 //                    showAlert("아이디 또는 비밀번호가 잘못되었습니다");
 //                }
 
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-                return;
+
             }
         });
     }
