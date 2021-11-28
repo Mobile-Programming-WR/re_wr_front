@@ -32,7 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:dividerHeight="10sp"
-                android:divider="@android:color/transparent">
+                android:divider="@android:color/transparent"
+                android:childDivider="@android:color/transparent">
 
             </ExpandableListView>
         </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.wr.http;
 import com.example.wr.DTO.Challenge;
 import com.example.wr.DTO.Friend;
 import com.example.wr.DTO.FriendsList;
+import com.example.wr.DTO.RecordsList;
 import com.example.wr.DTO.RegisterRequest;
 
 import retrofit2.Call;
@@ -45,8 +46,8 @@ public interface RetrofitAPI {
     // challenge
     @GET("challenge")
     Call<Challenge> getChallenge(@Header("Authorization") String authorization);
-//    @GET("record/list")
-//    Call<RecordsList> getRecordsList(@Header("Authorization") String authorization);
+    @GET("record/list")
+    Call<RecordsList> getRecordsList(@Header("Authorization") String authorization);
 //
 //    @GET("record/read/{UID}")
 //    Call<RecordsList> getRecord(@Header("Authorization") String authorization, @Path("UID") String uid);
