@@ -49,7 +49,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -179,7 +181,10 @@ public class RunningFragment extends Fragment
                 int strSteps = currentSteps;
                 int strPace = (int) pace;
                 int strCadence = (int)cadence;
-                Log.d("RunningFragment", "strTime:"+strTime + "\n"+ distance+"\n"+strSteps +"\n" + strPace +"\n" + strCadence);
+
+
+
+                Log.d("RunningFragment", "strTime:" + "\n"+ distance+"\n"+strSteps +"\n" + strPace +"\n" + strCadence);
 
                 RunInfo runInfo = new RunInfo(strTime, distance, strSteps, strPace, strCadence, arrayPoints);
 
