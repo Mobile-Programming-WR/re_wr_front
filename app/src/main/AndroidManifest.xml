@@ -29,6 +29,8 @@
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="로그인"/>
-
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:label="화원가입"/>
     </application>
 </manifest>
