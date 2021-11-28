@@ -1,5 +1,6 @@
 package com.example.wr.http;
 
+import com.example.wr.DTO.Challenge;
 import com.example.wr.DTO.FriendsList;
 
 import retrofit2.Call;
@@ -34,7 +35,9 @@ public interface RetrofitAPI {
     // record
     @POST("record")
     Call<Success> postAddRecord(@Header("Authorization") String authorization, @Body RunInfo runInfo);
-
+    // challenge
+    @GET("challenge")
+    Call<Challenge> getChallenge(@Header("Authorization") String authorization);
 //    @GET("record/list")
 //    Call<RecordsList> getRecordsList(@Header("Authorization") String authorization);
 //
