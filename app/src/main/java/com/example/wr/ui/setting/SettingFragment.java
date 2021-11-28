@@ -21,7 +21,6 @@ import com.example.wr.MainActivity;
 import com.example.wr.databinding.FragmentSettingBinding;
 
 public class SettingFragment extends Fragment {
-    private SettingViewModel settingViewModel;
     private FragmentSettingBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

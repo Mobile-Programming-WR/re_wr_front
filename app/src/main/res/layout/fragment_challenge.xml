@@ -6,4 +6,77 @@
     android:layout_height="match_parent"
     tools:context=".ui.challenge.ChallengeFragment">
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvChallengeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            android:fontFamily="@font/rubik_one"
+            android:text="Rank"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp">
+            <ImageView
+                android:id="@+id/ivChallengePercentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/challenge" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/ivChallengePercentage"
+                android:layout_alignLeft="@+id/ivChallengePercentage"
+                android:layout_alignRight="@+id/ivChallengePercentage"
+                android:layout_alignTop="@+id/ivChallengePercentage"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="36sp"
+                android:fontFamily="@font/rubik_one"
+                android:text="상위 35%">
+            </TextView>
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tvChallengeRankTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="Top 10"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+            <ListView
+                android:id="@+id/lvChallengeRankList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:dividerHeight="10sp"
+                android:divider="@android:color/transparent">
+
+            </ListView>
+        </LinearLayout>
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

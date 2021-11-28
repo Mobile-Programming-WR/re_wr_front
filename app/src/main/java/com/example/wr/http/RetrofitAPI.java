@@ -28,4 +28,12 @@ public interface RetrofitAPI {
 
     @POST("record")
     Call<Success> postAddRecord(@Header("Authorization") String authorization, @Body RunInfo runInfo);
+
+    @GET("record/list")
+    Call<RecordsList> getRecordsList(@Header("Authorization") String authorization);
+
+    @GET("record/read/{UID}")
+    Call<RecordsList> getRecord(@Header("Authorization") String authorization, @Path("UID") String uid);
+
+
 }

@@ -19,6 +19,7 @@ import com.example.wr.http.Friend;
 import com.example.wr.http.RetrofitClient;
 import com.example.wr.http.Success;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -53,13 +54,13 @@ public class RequestListAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View converView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
         View view = mLayoutInflater.inflate(R.layout.listview_request, null);
 
         TextView tvFriendName = (TextView)view.findViewById(R.id.tvFriendName);
-        Button btnAddCompetition = (Button)view.findViewById(R.id.btnAccept);
+        Button btnAddAccept = (Button)view.findViewById(R.id.btnAccept);
         tvFriendName.setText(friendsList.get(position).getName());
-        btnAddCompetition.setOnClickListener(new View.OnClickListener() {
+        btnAddAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences preferences = mContext.getSharedPreferences("UserInfo", Context.MODE_PRIVATE);

@@ -6,4 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".ui.competition.CompetitionFragment">
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="30dp">
+            <TextView
+                android:id="@+id/tvCompetitionMyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/emblema_one"
+                android:text="엄유상"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/tvCompetitionVS"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/emblema_one"
+                android:text="VS"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                android:paddingHorizontal="30dp"/>
+            <TextView
+                android:id="@+id/tvCompetitionFriendName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/emblema_one"
+                android:text="김예빈"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tvCompetitionMyDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="6.4km"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/tvCompetitionDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/emblema_one"
+                android:text="거리"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingHorizontal="30dp"/>
+            <TextView
+                android:id="@+id/tvCompetitionFriendDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="5.8km"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tvCompetitionMyTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="40:41"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/tvCompetitionTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/emblema_one"
+                android:text="시간"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingHorizontal="30dp"/>
+            <TextView
+                android:id="@+id/tvCompetitionFriendTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="40:41"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal">
+            <TextView
+                android:id="@+id/tvCompetitionMySteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="20185"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/tvCompetitionSteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/emblema_one"
+                android:text="걸음"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:paddingHorizontal="30dp"/>
+            <TextView
+                android:id="@+id/tvCompetitionFriendSteps"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubik_one"
+                android:text="18262"
+                android:textColor="@color/black"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+        <com.github.mikephil.charting.charts.LineChart
+            android:layout_height="300dp"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:id="@+id/chart"
+            tools:ignore="MissingClass" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

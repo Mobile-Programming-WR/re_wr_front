@@ -172,14 +172,16 @@ public class RunningFragment extends Fragment
         btnRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                chronometer.stop();
+                int strTime;
+                strTime = (int) (SystemClock.elapsedRealtime() - chronometer.getBase());
+                double distance = textDist;
+                int strSteps = currentSteps;
+                int strPace = (int) pace;
+                int strCadence = (int)cadence;
+                Log.d("RunningFragment", "strTime:"+strTime + "\n"+ distance+"\n"+strSteps +"\n" + strPace +"\n" + strCadence);
 
-                String strTime = String.valueOf(SystemClock.elapsedRealtime() - pauseOffset);
-                String strDistance = String.valueOf(textDist);
-                String strSteps = String.valueOf(currentSteps);
-                String strPace = String.valueOf(paceMin)+"\'"+String.valueOf(paceSec)+"\'\'";
-                String strCadence = String.valueOf((int)cadence);
-
-                RunInfo runInfo = new RunInfo(strTime, strDistance, strSteps, strPace, strCadence, arrayPoints);
+                RunInfo runInfo = new RunInfo(strTime, distance, strSteps, strPace, strCadence, arrayPoints);
 
                 SharedPreferences preferences = getContext().getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
                 String token = "bearer "+preferences.getString("token","");
