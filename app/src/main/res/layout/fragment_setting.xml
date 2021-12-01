@@ -41,7 +41,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/btn_radius_big"
+                android:textColor="@color/white"
                 android:text="로그아웃" />
+
         </LinearLayout>
 
 
