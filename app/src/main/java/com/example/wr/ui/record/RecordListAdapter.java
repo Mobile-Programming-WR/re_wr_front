@@ -6,16 +6,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Chronometer;
 import android.widget.ExpandableListAdapter;
-import android.widget.ExpandableListView;
 import android.widget.TextView;
 
 import com.example.wr.R;
-import com.example.wr.http.RunInfo;
-import com.google.android.gms.maps.GoogleMap;
+import com.example.wr.DTO.RunInfo;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

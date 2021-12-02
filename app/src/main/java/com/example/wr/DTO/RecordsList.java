@@ -1,7 +1,5 @@
 package com.example.wr.DTO;
 
-import com.example.wr.http.RunInfo;
-
 import java.util.List;
 
 public class RecordsList {
