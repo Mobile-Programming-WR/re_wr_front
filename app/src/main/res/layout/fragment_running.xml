@@ -19,6 +19,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="80dp"
         android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +62,7 @@
         </LinearLayout>
 
         <TableLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="25dp">
@@ -69,12 +70,12 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
+                android:paddingLeft="15dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/distance"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:gravity="left"
@@ -83,23 +84,24 @@
 
                 <TextView
                     android:id="@+id/distance_value"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/rubik_one"
+                    android:textColor="@color/black"
                     android:gravity="left"
-                    android:text="0.0"
+                    android:text="0.0 km"
                     android:textSize="18dp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:paddingLeft="15dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/steps"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:gravity="left"
@@ -108,9 +110,10 @@
 
                 <TextView
                     android:id="@+id/steps_value"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/rubik_one"
+                    android:textColor="@color/black"
                     android:gravity="left"
                     android:text="0"
                     android:textSize="18dp" />
@@ -119,12 +122,12 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:paddingLeft="15dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/pace"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:gravity="left"
@@ -133,9 +136,10 @@
 
                 <TextView
                     android:id="@+id/pace_value"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/rubik_one"
+                    android:textColor="@color/black"
                     android:gravity="left"
                     android:text="0'0''"
                     android:textSize="18dp" />
@@ -145,12 +149,12 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:paddingLeft="15dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/time"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:gravity="left"
@@ -159,7 +163,7 @@
 
                 <Chronometer
                     android:id="@+id/time_value"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/rubik_one"
                     android:gravity="left"
@@ -170,12 +174,12 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="15dp"
+                android:paddingLeft="15dp"
                 android:gravity="center">
 
                 <TextView
                     android:id="@+id/cadence"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:gravity="left"
@@ -184,8 +188,9 @@
 
                 <TextView
                     android:id="@+id/cadence_value"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/rubik_one"
                     android:gravity="left"
                     android:text="0"
@@ -205,17 +210,14 @@
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"
-                android:background="@drawable/btn_play_xml"
                 android:layout_marginHorizontal="10dp"
-                />
+                android:background="@drawable/btn_play_xml" />
 
             <ImageButton
                 android:id="@+id/btnRestart"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="25dp"
                 android:background="@drawable/btn_stop"
                 android:layout_marginHorizontal="10dp"
                 android:visibility="gone"

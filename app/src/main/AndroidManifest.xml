@@ -15,6 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.WR">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBXffNRRYuHXF3-Yx66qKydRq4-swSQkzM" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -28,9 +32,22 @@
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"
-            android:label="로그인"/>
+            android:label="로그인">
+
+        </activity>
+
         <activity
             android:name=".ui.register.RegisterActivity"
-            android:label="화원가입"/>
+            android:label="화원가입">
+
+        </activity>
+
+        <activity
+            android:name=".ui.record.MapsActivity"
+            android:exported="true"
+            android:label="경로">
+
+        </activity>
+
     </application>
 </manifest>

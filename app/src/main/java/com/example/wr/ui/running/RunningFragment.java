@@ -141,7 +141,7 @@ public class RunningFragment extends Fragment
                     timeVal.start();
                     totDist = 0;
                     dist = 0;
-                    distanceVal.setText("0.0");
+                    distanceVal.setText("0.0 km");
                     currentSteps = 0;
                     stepsVal.setText(String.valueOf(currentSteps));
                     cadence = 0;
@@ -216,7 +216,7 @@ public class RunningFragment extends Fragment
                 pauseOffset = 0;
                 totDist = 0;
                 dist = 0;
-                distanceVal.setText("0.0");
+                distanceVal.setText("0.0 km");
                 currentSteps = 0;
                 stepsVal.setText("0");
                 cadence = 0;
@@ -265,9 +265,9 @@ public class RunningFragment extends Fragment
 */
                 CalDistance calDistance = new CalDistance(fromLatLng.latitude, fromLatLng.longitude, toLatLng.latitude, toLatLng.longitude);
                 dist = calDistance.getDistance();
-                Log.d("MapsActivity", "totdist: "+totDist+"dist:"+dist);
+                //Log.d("MapsActivity", "totdist: "+totDist+"dist:"+dist);
 
-                dist = dist * 1.609344;    // 단위 mile 에서 km 변환.
+                //dist = dist * 1.609344;    // 단위 mile 에서 km 변환.
                 //dist = dist * 1000.0;      // 단위  km 에서 m 로 변환
 
                 totDist += dist;
@@ -275,14 +275,14 @@ public class RunningFragment extends Fragment
 
                 timeInSec = (float) ((SystemClock.elapsedRealtime() - chronometer.getBase()) / 1000);
                 pace = timeInSec/totDist;
-                Log.d("pace",pace+"'");
+                //Log.d("pace",pace+"'");
 
                 paceMin = (int)pace/60;
                 paceSec = (int)pace%60;
                 cadence = currentSteps/timeInSec*60;
 
-                Log.d("pace",pace/60+"'"+pace%60+"''");
-                distanceVal.setText(String.valueOf(textDist));
+                Log.d("distance",toString().valueOf(dist)+" "+toString().valueOf(totDist));
+                distanceVal.setText(String.valueOf(textDist) + " km");
                 paceVal.setText(String.valueOf((int)pace/60)+"\'"+String.valueOf((int)pace%60)+"\'\'");
 
                 cadenceVal.setText(String.valueOf((int)cadence));
@@ -385,12 +385,7 @@ public class RunningFragment extends Fragment
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        /*mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));*/
     }
 
 
