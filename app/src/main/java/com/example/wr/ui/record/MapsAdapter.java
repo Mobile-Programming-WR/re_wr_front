@@ -10,7 +10,7 @@ import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.example.wr.R;
-import com.example.wr.http.RunInfo;
+import com.example.wr.DTO.RunInfo;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
