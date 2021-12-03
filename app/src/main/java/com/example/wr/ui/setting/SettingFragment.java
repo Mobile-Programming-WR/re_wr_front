@@ -37,9 +37,11 @@ public class SettingFragment extends Fragment {
                 SharedPreferences.Editor editor = preferences.edit();
                 //putString(KEY,VALUE)
                 editor.putString("token","");
+                editor.putString("name", "");
                 //항상 commit & apply 를 해주어야 저장이 된다.
                 editor.commit();
                 Intent intent = new Intent(getActivity(), MainActivity.class);
+                getActivity().finish();
                 startActivity(intent);
                 return;
             }

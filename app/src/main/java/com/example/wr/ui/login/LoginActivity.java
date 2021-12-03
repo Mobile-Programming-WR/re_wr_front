@@ -67,15 +67,18 @@ public class LoginActivity extends AppCompatActivity {
                             return;
                         }
                         String token = response.body().getToken();
+                        String name = response.body().getName();
                         Log.d("연결이 성공적, token : ", token);
                         preferences = getSharedPreferences("UserInfo", MODE_PRIVATE);
                         //Editor를 preferences에 쓰겠다고 연결
                         SharedPreferences.Editor editor = preferences.edit();
                         //putString(KEY,VALUE)
                         editor.putString("token",token);
+                        editor.putString("name", name);
                         //항상 commit & apply 를 해주어야 저장이 된다.
                         editor.commit();
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                        finish();
                         startActivity(intent);
                         return;
                     }
