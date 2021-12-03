@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         String token = preferences.getString("token","");
         if(token==null||token.equals("")){
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            finish();
             startActivity(intent);
             return;
         } else {
