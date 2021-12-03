@@ -54,8 +54,10 @@
         <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.17291666666666666" />
         <entry key="app/src/main/res/font/font.xml" value="0.19479166666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2666543638405638" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/app_bar_main.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.12386018237082067" />
+        <entry key="app/src/main/res/layout/custom_spinner.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/fragment_challenge.xml" value="0.4375" />
         <entry key="app/src/main/res/layout/fragment_competition.xml" value="0.3725247524752475" />
         <entry key="app/src/main/res/layout/fragment_friend.xml" value="0.13405797101449277" />
@@ -63,7 +65,7 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13405797101449277" />
         <entry key="app/src/main/res/layout/fragment_record.xml" value="0.13405797101449277" />
         <entry key="app/src/main/res/layout/fragment_running.xml" value="0.13405797101449277" />
-        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.13405797101449277" />
+        <entry key="app/src/main/res/layout/fragment_setting.xml" value="0.375" />
         <entry key="app/src/main/res/layout/fragment_slideshow.xml" value="0.2546875" />
         <entry key="app/src/main/res/layout/layout_login.xml" value="0.37257438551099614" />
         <entry key="app/src/main/res/layout/layout_register.xml" value="0.335" />

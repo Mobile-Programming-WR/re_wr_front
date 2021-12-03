@@ -47,7 +47,7 @@ public class ChallengeListAdapter extends BaseAdapter {
         TextView tvChallengeDistance = (TextView)view.findViewById(R.id.tvChallengeDistance);
         tvChallengeIndex.setText(Integer.toString(position + 1));
         tvChallengeName.setText(ranker.getName());
-        tvChallengeDistance.setText(ranker.getDistance()+"km");
+        tvChallengeDistance.setText(String.format("%.2fkm",ranker.getDistance()));
         return view;
     }
 }
