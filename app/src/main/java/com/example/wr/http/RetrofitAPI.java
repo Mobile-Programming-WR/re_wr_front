@@ -6,6 +6,7 @@ import com.example.wr.DTO.FriendsList;
 import com.example.wr.DTO.RecordsList;
 import com.example.wr.DTO.RegisterRequest;
 import com.example.wr.DTO.RunInfo;
+import com.example.wr.DTO.Verification;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -53,6 +54,13 @@ public interface RetrofitAPI {
     // competition
     @GET("competition/{id}")
     Call<Competition> getCompetition(@Header("Authorization") String authorization, @Path("id") String id);
+
+
+    // verify
+    @POST("verify/sms")
+    Call<Success> postPhoneVerification(@Body Verification verification);
+    @POST("verify/sms/verify")
+    Call<Success> postVerificationCode(@Body Verification verification);
 //
 //    @GET("record/read/{UID}")
 //    Call<RecordsList> getRecord(@Header("Authorization") String authorization, @Path("UID") String uid);
