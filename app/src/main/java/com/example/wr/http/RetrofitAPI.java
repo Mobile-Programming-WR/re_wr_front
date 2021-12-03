@@ -1,10 +1,11 @@
 package com.example.wr.http;
 
 import com.example.wr.DTO.Challenge;
-import com.example.wr.DTO.Friend;
+import com.example.wr.DTO.Competition;
 import com.example.wr.DTO.FriendsList;
 import com.example.wr.DTO.RecordsList;
 import com.example.wr.DTO.RegisterRequest;
+import com.example.wr.DTO.RunInfo;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -36,7 +37,7 @@ public interface RetrofitAPI {
     Call<Success> getAddCompetition(@Header("Authorization") String authorization, @Path("id") String id);
     @GET("friend/competition/accept/{id}")
     Call<Success> getAcceptCompetition(@Header("Authorization") String authorization, @Path("id") String id);
-    @GET("friend/competition/{id}")
+    @GET("friend/competition/list")
     Call<FriendsList> getCompetitionList(@Header("Authorization") String authorization);
     @DELETE("friend/{id}")
     Call<Success> deleteFriend(@Header("Authorization") String authorization, @Path("id") String id);
@@ -48,6 +49,10 @@ public interface RetrofitAPI {
     Call<Challenge> getChallenge(@Header("Authorization") String authorization);
     @GET("record/list")
     Call<RecordsList> getRecordsList(@Header("Authorization") String authorization);
+
+    // competition
+    @GET("competition/{id}")
+    Call<Competition> getCompetition(@Header("Authorization") String authorization, @Path("id") String id);
 //
 //    @GET("record/read/{UID}")
 //    Call<RecordsList> getRecord(@Header("Authorization") String authorization, @Path("UID") String uid);

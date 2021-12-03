@@ -34,7 +34,7 @@ import androidx.fragment.app.Fragment;
 import com.example.wr.R;
 import com.example.wr.databinding.FragmentRunningBinding;
 import com.example.wr.http.RetrofitClient;
-import com.example.wr.http.RunInfo;
+import com.example.wr.DTO.RunInfo;
 import com.example.wr.http.Success;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -49,9 +49,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.PolylineOptions;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;

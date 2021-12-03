@@ -1,7 +1,8 @@
-package com.example.wr.http;
+package com.example.wr.DTO;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -36,6 +37,13 @@ public class RunInfo {
         return date;
     }
 
+    public int getIntDate() {
+        int result = 0;
+        SimpleDateFormat simpleDate = new SimpleDateFormat("MM-dd");
+        String dateString = simpleDate.format(date);
+        result = (dateString.charAt(0)-'0')*1000 + (dateString.charAt(1)-'0')*100 + (dateString.charAt(3)-'0')*10 + (dateString.charAt(4)-'0');
+        return result;
+    }
     public int getCadence() {
         return cadence;
     }

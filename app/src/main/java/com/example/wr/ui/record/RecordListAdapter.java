@@ -11,16 +11,14 @@ import android.widget.Chronometer;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.TextView;
-
 import com.example.wr.R;
-import com.example.wr.http.RunInfo;
+import com.example.wr.DTO.RunInfo;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
