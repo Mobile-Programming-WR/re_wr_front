@@ -3,9 +3,11 @@ package com.example.wr;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Layout;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.wr.db.PreferenceManager;
@@ -26,6 +28,7 @@ import com.example.wr.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
+    private View header;
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainBinding binding;
     private SharedPreferences preferences;
@@ -53,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         // 토큰 확인
         preferences = getSharedPreferences("UserInfo", MODE_PRIVATE);
         String token = preferences.getString("token","");
+        String name = preferences.getString("name","");
         if(token==null||token.equals("")){
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             finish();
@@ -60,6 +64,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         } else {
             Log.d("메인엑티비티 token : ", token);
+//            header = getLayoutInflater().inflate(R.layout.nav_header_main, null, false);
+//            TextView tvName = (TextView) header.findViewById(R.id.tvNavHeaderName);
+//            tvName.setText(name);
+//            return;
+            View nav_header_view = navigationView.getHeaderView(0);
+            TextView nav_header_id_text = (TextView) nav_header_view.findViewById(R.id.tvNavHeaderName);
+            nav_header_id_text.setText(name);
+            return;
         }
     }
 

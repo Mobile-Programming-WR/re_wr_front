@@ -26,11 +26,11 @@
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
-            android:id="@+id/Name"
+            android:id="@+id/tvNavHeaderName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:text="엄유상"
+            android:text="테스트"
             android:textSize="20sp" />
     </LinearLayout>
 
